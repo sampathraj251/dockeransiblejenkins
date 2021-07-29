@@ -4,7 +4,7 @@ pipeline{
         maven 'M2_HOME'
       }
     environment {
-      DOCKER_TAG = "getVersion()"
+      DOCKER_TAG = getVersion()
     }
     stages{
         stage('SCM'){
