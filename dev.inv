@@ -1,2 +1,2 @@
 [dev]
-10.0.0.150 ansible_user=ec2-user
+10.0.0.150 ansible_user=ansadmin
