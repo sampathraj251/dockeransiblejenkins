@@ -23,6 +23,16 @@ pipeline{
                 sh "docker build . -t sampathgorre/myapp:${DOCKER_TAG} "
             }
         }
+       stage('DockerHub Push'){
+            steps{
+                withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerHubPassword')]) {
+                    sh "docker login -u sampathgorre -p ${dockerHubPassword}"
+                     }
+                
+                sh "docker push sampathgorre/myapp:${DOCKER_TAG} "
+            }
+        }
+    
     } 
     
 }
